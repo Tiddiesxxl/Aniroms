@@ -1,0 +1,193 @@
+:root {
+  --primary-color: #06141B;
+  --secondary-color: #11212D;
+  --tertiary-color: #253745;
+  --accent-color: #4A5C6A;
+  --background-color: #9BABAB;
+  --text-color: #f7efef;
+  --link-border-color: #4A5C6A;
+  --link-hover-bg-color: #11212D;
+  --link-hover-shadow-color: rgba(74, 92, 106, 0.5);
+  --link-hover-text-color: #ffffff;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+  display: flex;
+  background-color: var(--tertiary-color);
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background color */
+  color: var(--text-color);
+  width: 200px;
+  padding: 20px;
+  position: fixed; /* Fixed positioning for sidebar */
+  height: 100vh;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  transform: translateX(-100%); /* Initially hide the sidebar */
+  opacity: 0.8;
+}
+
+.sidebar.collapsed {
+  transform: translateX(0); /* Show sidebar when not collapsed */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head1 {
+  font-size: 20px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+  display: block;
+  border: 2px solid var(--link-border-color);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.sidebar-menu a:hover {
+  background-color: var(--link-hover-bg-color);
+  box-shadow: 0 0 10px var(--link-hover-shadow-color);
+  color: var(--link-hover-text-color);
+}
+
+/* Basic code block styling */
+code, pre {
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+  font-size: 14px; /* Font size */
+  background-color: #4A5C6A; /* Black background */
+  color: #d3d3f4; /* Light purple text */
+  padding: 10px; /* Padding inside the code block */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #333; /* Dark gray border */
+  display: block; /* Ensures the pre and code blocks take the full width */
+  overflow-x: auto; /* Horizontal scrolling for long code */
+  white-space: pre; /* Preserve whitespace and newlines */
+}
+
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: var(--tertiary-color);
+  color: var(--text-color);
+  height: 100vh;
+  overflow-y: auto;
+  margin-left: 200px; /* Offset for sidebar */
+  transition: margin-left 0.3s ease-in-out;
+  width: calc(100% - 200px); /* Adjust width for sidebar */
+}
+
+.content.collapsed {
+  margin-left: 300px;
+  width: 100%;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: left 0.3s ease-in-out;
+  font-size: 20px;
+  z-index: 1001; /* Ensure the button is above other elements */
+}
+
+.toggle-button.collapsed {
+  left: 220px;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Ensure sidebar maintains width */
+    height: 100vh;
+    transform: translateX(-100%); /* Hide sidebar by default on mobile */
+  }
+
+  .sidebar.collapsed {
+    transform: translateX(0); /* Show sidebar when not collapsed */
+  }
+
+  .toggle-button {
+    left: 20px; /* Position button for mobile view */
+  }
+
+  .toggle-button.collapsed {
+    left: 220px; /* Position button when sidebar is collapsed */
+  }
+
+  .content {
+    margin-left: 0; /* Reset margin for content */
+    width: 100%; /* Full width for content */
+  } 
+
+  .content.collapsed {
+    margin-left: 200px; /* Adjust content margin when sidebar is not collapsed */
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-button {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .sidebar-menu a {
+    padding: 8px;
+    margin: 0 0 8px;
+  }
+}
+.img{
+  width: 50%;
+  height: 50%;
+}

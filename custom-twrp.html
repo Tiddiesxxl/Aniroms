@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="style.css">
+<h2>Custom TWRP Zipsssss</h2>
+<p>
+  Creating a custom TWRP flashable zip from an image involves several steps. Here's a detailed guide:
+</p>
+<ol>
+  <li>
+    <strong>Unlock Bootloader:</strong>
+    <p>First, you need to unlock the bootloader of your phone. <br> 
+      This process varies by manufacturer, so refer to your phone's specific instructions.</p>
+  </li>
+  <li>
+    <strong>Download TWRP Image:</strong>
+    <p>Download the appropriate TWRP image for your device from the official TWRP website.</p>
+  </li>
+  <li>
+    <strong>Install ADB and Fastboot:</strong>
+    <p>Install ADB and Fastboot on your computer. These tools are essential for flashing the TWRP image.</p>
+  </li>
+  <li>
+    <strong>Boot into Fastboot Mode:</strong>
+    <p>Power off your phone and boot into fastboot mode. <br>
+      This is usually done by holding the volume down and power buttons simultaneously.</p>
+  </li>
+  <li>
+    <strong>Flash TWRP Image:</strong>
+    <p>Connect your phone to your computer and use the following command to flash the TWRP image:</p><br>
+    <pre><code>fastboot flash recovery twrp.img</code></pre>
+  </li>
+  <li>
+    <strong>Boot into TWRP:</strong>
+    <p>Once the image is flashed, <br>
+      boot into TWRP recovery mode by holding the volume up and power buttons simultaneously.</p>
+  </li>
+  <li>
+    <strong>Create Flashable Zip:</strong>
+    <p>To create a flashable zip, you need to package the TWRP image into a zip file. <br>
+      You can use tools like Android Image Kitchen or manually create the zip structure. <br>
+      The structure should look like this:</p>
+    <pre><code>
+      META-INF/
+        com/
+          google/
+            android/
+              update-binary
+              updater-script
+      recovery/
+        twrp.img
+    </code></pre>
+    <p>The <code>update-binary</code> and <code>updater-script</code> files are essential for the flashing process.<br>
+       You can find templates for these files online.</p>
+  </li>
+  <li>
+    <strong>Flash the Zip:</strong>
+    <p>Place the zip file on your phone's storage and flash it using TWRP. <br>
+      Navigate to the "Install" section in TWRP, select the zip file, and swipe to confirm the flash.</p>
+  </li>
+</ol>
+<p>Following these steps will help you create and flash a custom TWRP zip from an image. <br>
+  Always ensure you have backups before proceeding with any modifications.</p>

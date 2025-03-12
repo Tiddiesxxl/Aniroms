@@ -1,0 +1,155 @@
+<link rel="stylesheet" href="style.css">
+<title>A30s Full AOSP Flashing Guide</title>
+    <h1>A30s Full AOSP Flashing Guide</h1>
+    <p>Sanji • December 6, 2023 at 20:55</p>
+    <p>⚠️⚠️⚠️</p>
+    <ul>
+        <li>Your warranty is now void.</li>
+        <li>I am not responsible for bricked devices, dead SD cards,</li>
+        <li>thermonuclear war, or you getting fired because the alarm app failed. Please</li>
+        <li>do some research if you have any concerns about features included in this ROM</li>
+        <li>before flashing it! YOU are choosing to make these modifications, and if</li>
+        <li>you point the finger at me for messing up your device, I will laugh at you.</li>
+    </ul>
+
+    <h2>Step 1: Unlocking Bootloader 📱</h2>
+    <p>🚨Your device will be factory reset so take a backup of your necessary file and media</p>
+    <p>Pre requirements</p>
+    <ul>
+        <li>Your device (obviously duhh)</li>
+        <li>A Pc/laptop</li>
+        <li>Samsung drivers installed in pc <a href="https://t.me/galaxya30s">[click]</a></li>
+        <li>Your charging cable/or any working usb cable</li>
+    </ul>
+    <p>Follow the steps</p>
+    <ol>
+        <li>Go to settings</li>
+        <li>Tap on about phone</li>
+        <li>Tap on Software information</li>
+        <li>Tap rapidly on build number for 7times</li>
+        <li>Go back</li>
+        <li>You'll find a new option call <strong>Developer Options</strong></li>
+        <img class="img" style="padding-top: 1px; " src="n1.jpg" >
+        <li>click on it and you'll see a option call OEM unlocking, turn it on</li>
+        <li>This how it should look like</li>
+        <li>Now turn off your device</li>
+        <li>After it's completely turned off</li>
+        <li>Hold both volume up and down buttons and connect the USB cable (make sure the usb already connected to your pc)</li>
+        <li>You should see something like<br>
+        This</li>
+        <li>long press volume up button as it's written in there</li>
+        <li>After page new appears again press volume up once</li>
+        <li>Now your phone will boot and show a warning ⚠️ screen about bootloader being unlocked</li>
+        <li>You can wait for 10 seconds or just press the power button to continue</li>
+        <li>After device booted,, set it up like normally you would do 📱</li>
+    </ol>
+    <p>Congratulations first step is complete💯</p>
+    
+    <p>I recommend to watch some YouTube videos about Samsung bootloader unlocking for more information cuz it's much easier than other devices.</p>
+    <p>Now lets get to the good parts🔫</p>
+    
+    <h2>Step 2: Flashing TWRP recovery</h2>
+    <p>Pre requirements</p>
+    <ul>
+        <li>All of the above requirements+</li>
+        <li>Odin software just google it or (<a href="https://t.me/galaxya30s">https://t.me/galaxya30s</a>)</li>
+        <li>twrp_4.0_stable (its actually twrp-3.4.0-0-black-a30s.tar) from <a href="https://t.me/galaxya30s">https://t.me/galaxya30s</a></li>
+        <li>Twrp 3..7 from eureka group <a href="https://t.me/eureka_roms/790">https://t.me/eureka_roms/790</a></li>
+    </ul>
+    <p>Less goo</p>
+    <ol>
+        <li>Turn off your device</li>
+        <li>Now hold both volume down and up button and connect USB just like you did in bootloader unlocking step</li>
+        <li>After this screen appears</li>
+        <li>Click volume up button once</li>
+        <li>You'll see download mode</li>
+    </ol>
+    <p>Few things to be concern about</p>
+    <ul>
+        <li>🚨See if the frp lock and oem lock is off</li>
+        <li>⚠️You might get kg state: checking at the place where its written current binary,its okay</li>
+        <li>⚠️⚠️If kg state:prenormal follow xda guide to fix it</li>
+        <li>Everything else is okay</li>
+    </ul>
+    
+    <p>Now move to pc💻</p>
+    <p>🚨<br>
+    Hope you already installed the drivers and and rebooted you pc<br>
+    If not than your PC won't recognize your Samsung device</p>
+    <ol>
+        <li>Open Odin software</li>
+        <li>Put the twrp-3.4.0-0-black-a30s.tar file on ap slot<br>
+        Like this</li>
+        <li>go to options and uncheck auto reboot</li>
+        <li>Do same as shown</li>
+        <li>If your device already connected to pc or you are connecting now<br>
+        You'll see this</li>
+        <li>🚨If not showing,, you messed up driver installation<br>
+        Install the correct drivers and reboot pc</li>
+        <li>Now Click on start</li>
+    </ol>
+    
+    <p>green pass=succes</p>
+    <p>This part is a bit tricky read and follow carefully 🤠<br>
+    because we unchecked auto reboot phone will still be in download mode, so we need to manually boot the device into recovery but if you boot it on stock rom the twrp recovery will be replaced with stock recovery and you have to do the twrp installation step once again :P<br>
+    Follow my lead 😎</p>
+    <ol>
+        <li>Hold volume down and power button</li>
+        <li>As soon as screen goes black release volume down button and quickly hold volume up button (do not release power key)</li>
+        <li>Keep holding the volume up and power until twrp logo appears</li>
+        <li>Now swipe into it and format data quickly</li>
+    </ol>
+    <p>Its old twrp so its kinda buggy it freezes after few minutes so you have to do the steps as quickly as possible</p>
+    
+    <p>After formating data</p>
+    <ol>
+        <li>Move the TWRP 3.7 image to you device from PC (sd card would be good too)</li>
+        <li>Now tap on install and navigate to the folder you where you moved twrp imgae</li>
+        <li>On the right down corner there is a option call "install image" click it</li>
+        <li>Then twrp image will appear</li>
+        <li>Click it</li>
+        <li>Select recovery</li>
+        <li>Flash</li>
+        <li>Now go back to restart manu and reboot to recovery</li>
+    </ol>
+    <p>Now your phone will boot into latest twrp</p>
+    <p>congratulations 👏 🎉 you got the hard part done ✅</p>
+    
+    <p>⚠️ ⚠️ ⚠️ ⚠️<br>
+    Seems like after installing this twrp Sim Signal drops Continuously<br>
+    <a href="https://t.me/tw02cloud/172">https://t.me/tw02cloud/172</a><br>
+    (You have to do this once,,after sim fixed you can flash any AOSP)</p>
+
+<p>(keep in mind this is just a one time thing. You don't have to do this step after network is fixed untill you flash stock rom again lmao)</p>
+
+
+<h2>Step 3: flashing any AOSP rom</h2>
+<ol>
+    <li>go to wipe section</li>
+    <li>Tap on advanced wipe</li>
+    <li>Select data,system.vendor,cache,dalvik,product</li>
+    <li>And wipe them</li>
+    <li>Now move the ROM zip to your phone's internal storage or you can use sd card or other drives with OTG adapter</li>
+    <li>Simply flash the ROM</li>
+    <li>After flashing is complete</li>
+    <li>If you flashed Vanilla ROM you need to flash gapps now cuz vanilla rom does not come with google services</li>
+    <li>We recommend bitgapps(google it)</li>
+</ol>
+
+<p>Ok AOSP flashed successfully 👌 Reboot and enjoy the ROM now 😁</p>
+
+<p>Yo Advanced users want ksu?😎</p>
+<p>Flash eureka kernel r15 a30s aosp.zip or the new one if available</p>
+<p><a href="https://t.me/eureka_support_group">https://t.me/eureka_support_group</a></p>
+<ol>
+    <li>Flash in TWRP</li>
+    <li>It will open the installer</li>
+    <li>Next</li>
+    <li>Click on 2nd option to configure</li>
+    <li>Select these</li>
+    <li>Aosp (new)</li>
+    <li>Enforcing</li>
+    <li>Dtbo5 (most stable)</li>
+    <li>Patched dm variety Yes</li>
+    <li>Install</li>
+</ol
